@@ -35,7 +35,7 @@ public class Customer
 
     public String toString()
     {
-        String str = name + " " + id + " " + discount +"%";
+        String str = name + " (" + id + ") " + " (" + discount + "%) ";
         return str;
     }
 
