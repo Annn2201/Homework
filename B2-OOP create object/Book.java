@@ -1,4 +1,3 @@
-//package B2-OOP create object;
 
 public class Book 
 {
@@ -62,6 +61,10 @@ public class Book
         Author author = new Author("An", "an123@gmail.com", 'm');
         Book book = new Book("tu chuyen", author, 100);
         Book book1 = new Book("tu chuyen", author, 100, 5);
+        book1.setQty(5);
+        System.out.println("name: " + book.getName());
+        System.out.println("qty: "+ book1.getQty());
         System.out.println(book);
+        System.out.println(book1);
     }
 }
