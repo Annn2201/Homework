@@ -2,11 +2,11 @@
 
 public class Human 
 {
-    static void walk()
+    public void walk()
     {
         System.out.println("i'm walking");
     }   
-    static void eat()
+    public void eat()
     {
         System.out.println("i'm eating");
     }
