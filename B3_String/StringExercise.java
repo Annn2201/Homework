@@ -100,22 +100,15 @@ public class StringExercise {
         Scanner kb = new Scanner(System.in);
         System.out.println("Nhap xau:");
         String str = kb.nextLine();
-        int count = 0;
         int index = 0;
+        ArrayList ListA = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             if (Character.isDigit(str.charAt(i))) {
-                count++;
+                ListA.add(Character.getNumericValue(str.charAt(i)));
+                index++;
             }
         }
-        int a[] = new int[count];
-        for (int i = 0; i < count; i++) {
-            a[index] = Character.getNumericValue(str.charAt(i));
-            index++;
-        }
-        System.out.println("Mang so nguyen trong xau: ");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
+        System.out.println("Mang so nguyen trong xau: " + ListA);
     }
 
     public static void cutString2() {
