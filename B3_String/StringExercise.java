@@ -30,7 +30,7 @@ public class StringExercise {
         System.out.println("So ki tu in hoa trong xau la: " + count);
     }
 
-    public static void countDigit() {
+    public static void countDigitChar() {
         int count = 0;
         Scanner kb = new Scanner(System.in);
         System.out.println("Nhap xau:");
