@@ -393,7 +393,7 @@ public class StringExercise {
         System.out.println(Arrays.toString(list));
     }
 
-    public static void removeString() {
+    public static void removeSpace() {
         String givenString = "    hihihi   ";
         String newString = givenString.trim();
         System.out.println(newString);
@@ -458,7 +458,7 @@ public class StringExercise {
         reverseWords();
         printIndex();
         giveStringintoList();
-        removeString();
+        removeSpace();
         moveSpace();
         validateEmpty();
     
