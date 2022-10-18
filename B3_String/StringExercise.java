@@ -381,7 +381,7 @@ public class StringExercise {
     }
 
     public static void printIndex() {
-        String givenString = "w3resource";
+        String givenString = "hi chao cau";
         for (int index = 0; index < givenString.length(); index++) {
             System.out.println("Current character " + givenString.charAt(index) + " position at " + index);
         }
