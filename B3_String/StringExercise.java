@@ -281,16 +281,148 @@ public class StringExercise {
         System.out.println("<" + tagname + ">" + contents + "</" + tagname + ">");
     }
 
-    public static void reverseString() {
-        Scanner kb = new Scanner(System.in);
-        System.out.println("Nhap xau: ");
-        String str = kb.nextLine();
-        if (str.length() % 4 == 0) {
-            for (int index = str.length() - 1; index >= 0; index--) {
-                System.out.print(str.charAt(index));
+    public static void changeToUpperCase2() {
+        String givenString = "HichAocau";
+        String subString = givenString.substring(0, 4);
+        int numOfCharIsUpperCase = 0;
+        if (givenString.length() >= 4) {
+            for (int index = 0; index < givenString.length(); index++) {
+                if (Character.isUpperCase(givenString.charAt(index))) {
+                    numOfCharIsUpperCase++;
+                }
+            }
+
+            if (numOfCharIsUpperCase >= 2) {
+                System.out.println(givenString.toUpperCase());
+            } else {
+                System.out.println(givenString);
+            }
+        } else {
+            System.out.println(givenString);
+        }
+
+    }
+
+    public static void removeNewLine() {
+        String givenString = "An \n" +
+                "nguyen\n";
+        String newString = "";
+        for (int index = 0; index < givenString.length(); index++) {
+            if (givenString.charAt(index) == '\n') {
+                newString = givenString.replace("\n", "");
             }
         }
+
+        System.out.println(newString);
     }
+
+    public static void checkString() {
+        String givenString = "aichaocau";
+        String specifiedChar = "a";
+        if (givenString.startsWith(specifiedChar)) {
+            System.out.println("Chuoi bat dau bang ki tu " + specifiedChar);
+        } else {
+            System.out.println("Chuoi khong bat dau bang ki tu " + specifiedChar);
+        }
+    }
+
+    public static void removeIndentation() {
+        String givenString = "\t hihihi";
+        String newString = "";
+        for (int index = 0; index < givenString.length(); index++) {
+            if (givenString.charAt(index) == '\t') {
+                newString = givenString.replace("\t", "");
+            }
+        }
+
+        System.out.println(newString);
+    }
+
+    public static void addPrefix() {
+        String givenString = "An \n" +
+                "nguyen\n";
+        String stringToAdd = "a";
+        String[] splitString = givenString.split("\n");
+        String newString = "";
+        for (int index = 0; index < splitString.length; index++) {
+            newString += stringToAdd + splitString[index];
+        }
+
+        System.out.println(newString);
+    }
+
+    public static void formatWithPercentage() {
+        double number = 0.123123;
+        NumberFormat numberFormat = NumberFormat.getPercentInstance();
+        String numberToPercent = numberFormat.format(number);
+        System.out.println(numberToPercent);
+    }
+
+    public static void alignNumber() {
+        int number = 05250;
+        String rightFormat = String.format("%10s", number);
+        String leftFormat = String.format("%-10s", number);
+        String centerFormat = String.format("%5s", number);
+        System.out.println("Origin: " + number);
+        System.out.println("Left format: " + leftFormat);
+        System.out.println("Right format: " + rightFormat);
+        System.out.println("Center format: " + centerFormat);
+    }
+
+    public static void reverseWords() {
+        String givenString = "hi chao cau";
+        String[] strings = givenString.split(" ");
+        String revString = "";
+        for (int index = givenString.length(); index <= 0; index--) {
+            revString += strings[index] + " ";
+        }
+
+        System.out.println(revString);
+    }
+
+    public static void printIndex() {
+        String givenString = "w3resource";
+        for (int index = 0; index < givenString.length(); index++) {
+            System.out.println("Current character " + givenString.charAt(index) + " position at " + index);
+        }
+    }
+
+    public static void giveStringintoList() {
+        String givenString = "hi chaoo cao";
+        String[] list = givenString.split(" ");
+        System.out.println(Arrays.toString(list));
+    }
+
+    public static void removeString() {
+        String givenString = "    hihihi   ";
+        String newString = givenString.trim();
+        System.out.println(newString);
+    }
+
+    public static void moveSpace() {
+        String givenString = "hi chao cau";
+        char[] str = givenString.toCharArray();
+        int i = str.length - 1;
+        for (int index = i; index >= 0; index--) {
+            if (str[index] != ' ') {
+                char c = str[i];
+                str[i] = str[index];
+                str[index] = c;
+                i--;
+            }
+        }
+        System.out.println(String.valueOf(str));
+    }
+
+    public static void validateEmpty() {
+        String givenString = "hihihi";
+        if (givenString.isEmpty()) {
+            System.out.println("This string is empty");
+        } else {
+            System.out.println("This string is not empty");
+        }
+    }
+
 
     public static void main(String[] args) {
         addTwoString();
@@ -316,8 +448,20 @@ public class StringExercise {
         takeInput();
         uniqueWord();
         addTag("i", "java");
-        reverseString();
-
+        changeToUpperCase2();
+        removeNewLine();
+        checkString();
+        removeIndentation();
+        addPrefix();
+        formatWithPercentage();
+        alignNumber();
+        reverseWords();
+        printIndex();
+        giveStringintoList();
+        removeString();
+        moveSpace();
+        validateEmpty();
+    
     }
 
 
