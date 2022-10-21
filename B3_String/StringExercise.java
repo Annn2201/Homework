@@ -422,6 +422,31 @@ public class StringExercise {
             System.out.println("This string is not empty");
         }
     }
+    
+    public static void print2Quote() {
+        String givenString = "Hi chao cao";
+        System.out.printf("\"%s\"", givenString);
+    }
+    
+    public static String glueString() {
+        String tech = "tech";
+        String dot = ".";
+        String io = "io";
+        return tech + dot + io ;
+    }
+    
+    public static void countOccurrences() {
+        String givenString = "abcd abc aabc baa abcaa";
+        String countString = "aa";
+        int count = 0;
+        for (int index = 0; index < givenString.length() - countString.length(); index++) {
+            if (givenString.startsWith(countString, index)) {
+                count ++;
+                index += countString.length() - 1;
+            }
+        }
+        System.out.println("Occurrences of that string: " + count);
+    }
 
 
     public static void main(String[] args) {
@@ -461,6 +486,9 @@ public class StringExercise {
         removeSpace();
         moveSpace();
         validateEmpty();
+        print2Quote();
+        System.out.println(glueString());
+        countOccurrences();
     
     }
 
