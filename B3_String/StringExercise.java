@@ -447,6 +447,71 @@ public class StringExercise {
         }
         System.out.println("Occurrences of that string: " + count);
     }
+    
+    public static void convertString() {
+        String stringToInt = "1231";
+        String stringToLong = "123456789456";
+        String stringToFloat = "25.1123F";
+        String stringToDouble = "21.25478254D";
+
+        System.out.println("Convert String to int/Integer:");
+        int toInt1 = Integer.valueOf(stringToInt);
+        int toInt2 = Integer.parseInt(stringToInt);
+        System.out.println("\"" + stringToInt + "\"" + " as int is "
+                + toInt1 + " and as Integer is " + toInt2);
+
+        System.out.println("\nConvert String to long/Long:");
+        Long toLong1 = Long.valueOf(stringToLong);
+        long toLong2 = Long.parseLong(stringToLong);
+        System.out.println("\"" + stringToLong + "\"" + " as long is "
+                + toLong1 + " and as Long is " + toLong2);
+        System.out.println("\nConvert String to float/Float:");
+        float toFloat1 = Float.valueOf(stringToFloat);
+        float toFloat2 = Float.parseFloat(stringToFloat);
+        System.out.println("\"" + stringToFloat + "\"" + " as float is "
+                + toFloat1 + " and as Float is " + toFloat2);
+
+        System.out.println("\nConvert String to double/Double:");
+        double toDouble1 = Double.valueOf(stringToDouble);
+        double toDouble2 = Double.parseDouble(stringToDouble);
+        System.out.println("\"" + stringToDouble + "\"" + " as double is "
+                + toDouble1 + " and as Double is " + toDouble2);
+    }
+
+    public static String removeString(String mainString, String subString) {
+        String m_string = mainString.toLowerCase();
+        String s_string = subString.toLowerCase();
+        String string = "";
+        for (int index = 0; index < mainString.length(); index++) {
+            if (index <= mainString.length() - subString.length()) {
+                String tmp = m_string.substring(index, index + s_string.length());
+                if (!tmp.equals(s_string)) {
+                    string += m_string.substring(index, index + 1);
+                } else {
+                    index += s_string.length() - 1;
+                }
+            } else {
+                String tmp2 = m_string.substring(index, index + 1);
+                if (!tmp2.equals(s_string)) {
+                    string += m_string.substring(index, index + 1);
+                }
+
+            }
+
+        }
+        return string;
+    }
+
+    public static void leadZero() {
+        int number = 155;
+        System.out.printf("%010d\n", number);
+
+    }
+
+    public static void printDataTpe() {
+        char ch = 'b';
+        System.out.printf("%S", ch);
+    }
 
 
     public static void main(String[] args) {
@@ -489,6 +554,10 @@ public class StringExercise {
         print2Quote();
         System.out.println(glueString());
         countOccurrences();
+        convertString();
+        System.out.println(removeString("This is the test string", "st"));
+        leadZero();
+        printDataTpe();
     
     }
 
